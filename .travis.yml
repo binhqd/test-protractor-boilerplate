@@ -7,4 +7,6 @@ before_install:
   - npm install gulp
 script:
   - npm install
+  - ./node_modules/.bin/webdriver-manager update --standalone
+  - ./node_modules/.bin/webdriver-manager start
   - npm test
