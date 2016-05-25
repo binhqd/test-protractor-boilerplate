@@ -12,12 +12,3 @@ gulp.paths = {
 };
 
 require('require-dir')('./gulp');
-
-gulp.task('config:test', function() {
-  let tmpENV = process.env.NODE_ENV;
-
-  process.env.NODE_ENV = 'test';
-  gulp.start('config', function() {
-    process.env.NODE_ENV = tmpENV;
-  });
-});

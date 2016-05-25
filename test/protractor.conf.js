@@ -56,13 +56,10 @@ exports.config = {
   params : {
     baseUrl : myConfig.websiteUrl,
     login : {
-      email : 'binhqd@gmail.com',
-      invalidPassword : '123123',
-      validPassword : '123^%$78',
-      uri: 'users/sign_in'
-    },
-    idea: {
-      createUrl: 'create'
+      email : myConfig.login.email,
+      invalidPassword : myConfig.login.invalidPassword,
+      validPassword : myConfig.login.validPassword,
+      uri: myConfig.login.uri
     }
   }
 };
