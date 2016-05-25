@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/binhqd/test-protractor-boilerplate.svg)](https://travis-ci.org/binhqd/test-protractor-boilerplate)
 ## Install npm packages
 ```sh
 npm install
