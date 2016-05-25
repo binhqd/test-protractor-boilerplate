@@ -4,6 +4,7 @@ node_js:
 before_install:
   - rm -rf node_modules
   - npm cache clean
+  - npm install gulp
 script:
   - npm install
   - npm test
