@@ -1,0 +1,36 @@
+{
+  "name": "site-www",
+  "version": "0.0.0",
+  "private": "true",
+  "dependencies": {},
+  "devDependencies": {
+    "angular-mocks": "^1.5.0",
+    "angular-scenario": "^1.5.0",
+    "browser-sync": "^2.11.1",
+    "chalk": "~0.5.1",
+    "connect-history-api-fallback": "^1.1.0",
+    "del": "~0.1.3",
+    "eslint": "^2.2.0",
+    "eslint-plugin-angular": "^0.11.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-ng-constant": "^1.1.0",
+    "gulp-protractor": "^2.3.0",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.1.3",
+    "jasmine-spec-reporter": "^2.4.0",
+    "jshint-stylish": "~0.1.3",
+    "karma": "^0.13.22",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-tasks": "^3.4.0",
+    "protractor": "^3.3.0",
+    "require-dir": "^0.3.0",
+    "traverse": "^0.6.6",
+    "yargs": "^3.9.1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test gulp protractor"
+  }
+}
