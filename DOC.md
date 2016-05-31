@@ -27,7 +27,7 @@ it('Page title must match', function() {
 ### Check url
 ```javascript
 it('Url must match', function() {
-  var url = "http://somedomain.com/someuri/something";
+  var url = "http://somedomain.com/someuri/something/";
   expect(browser.getCurrentUrl()).toEqual(url);
 });
 ```
@@ -35,7 +35,7 @@ it('Url must match', function() {
 #### Using class
 ```javascript
 it('It should have this input', function() {
-  expect(element.all(by.css('someInputClass')).count()).toEqual(1);
+  expect(element.all(by.css('.someInputClass')).count()).toEqual(1);
 });
 ```
 #### Using ID
@@ -53,6 +53,14 @@ it('Contact form should have fullname field', function() {
 ### Check if a popup is working correctly
 ```javascript
 it('Check if a popup has been opened', function() {
+  var btnLogin = by.css('.btnLogin');
+  browser.driver.findElement(btnLogin).then(function(elem) {
+    elem.click().then(function() {
+      expect(browser.getTitle()).toEqual('Login | Ideapod');
+      expect(browser.getCurrentUrl()).toEqual(loginUrl);
+    });
+  });
+
   browser.wait(function() {
     var elementToFind = by.css('.modal-registration-form');
 
@@ -66,7 +74,22 @@ it('Check if a popup has been opened', function() {
   });
 });
 ```
-### Form checking
-```javascript
 
+### Waiting for an element to be present
+```javascript
+it('Wait for something to present', function() {
+  browser.wait(function() {
+    var elementToFind = by.css('.something');
+
+    return browser.driver.isElementPresent(elementToFind).then(function(isPresent) {
+      return isPresent;
+    });
+  },3000);
+
+  // Do something after element has appeared
+});
+```
+### Let browser sleep for milliseconds
+```javascript
+browser.sleep(3000);
 ```
