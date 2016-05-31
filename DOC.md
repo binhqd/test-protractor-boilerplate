@@ -53,24 +53,11 @@ it('Contact form should have fullname field', function() {
 ### Check if a popup is working correctly
 ```javascript
 it('Check if a popup has been opened', function() {
-  var btnLogin = by.css('.btnLogin');
+  var btnLogin = by.css('.login-bt');
   browser.driver.findElement(btnLogin).then(function(elem) {
     elem.click().then(function() {
-      expect(browser.getTitle()).toEqual('Login | Ideapod');
-      expect(browser.getCurrentUrl()).toEqual(loginUrl);
+      expect(element.all(by.css('.signup-form')).count()).toEqual(1);
     });
-  });
-
-  browser.wait(function() {
-    var elementToFind = by.css('.modal-registration-form');
-
-    return browser.driver.isElementPresent(elementToFind).then(function(isPresent) {
-     return isPresent;
-    });
-  },15000);
-
-  element.all(by.css('.modal-registration-form')).then(function(elements) {
-    expect(elements.length).toBe(1);
   });
 });
 ```
